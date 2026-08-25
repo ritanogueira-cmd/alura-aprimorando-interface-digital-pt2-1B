@@ -1,5 +1,10 @@
 const botoes = document.querySelectorAll(".botoes button");
 
+const botaoTema = document.querySelector(".btn-tema");
+
+
+/* CURTIDAS */
+
 botoes.forEach(function (botao) {
 
     let curtiu = false;
@@ -9,6 +14,7 @@ botoes.forEach(function (botao) {
         const numeroSpan = botao.querySelector("span");
 
         const quantidadeAtual = Number(numeroSpan.textContent);
+
 
         if (curtiu === false) {
 
@@ -33,19 +39,20 @@ botoes.forEach(function (botao) {
 });
 
 
-const btnTema = document.querySelector("#btn-tema");
+/* MODO ESCURO */
 
-btnTema.addEventListener("click", function () {
+botaoTema.addEventListener("click", function () {
 
     document.body.classList.toggle("tema-escuro");
 
+
     if (document.body.classList.contains("tema-escuro")) {
 
-        btnTema.textContent = "☀️ Modo claro";
+        botaoTema.textContent = "☀️ Modo claro";
 
     } else {
 
-        btnTema.textContent = "🌙 Modo escuro";
+        botaoTema.textContent = "🌙 Modo escuro";
 
     }
 

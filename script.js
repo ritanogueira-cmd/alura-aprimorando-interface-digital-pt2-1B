@@ -24,11 +24,9 @@ botoes.forEach(function (botao) {
 
     let curtiu = false;
 
-
     botao.addEventListener("click", function () {
 
-        const numeroSpan =
-            botao.querySelector("span");
+        const numeroSpan = botao.querySelector("span");
 
         const quantidadeAtual =
             Number(numeroSpan.textContent);

@@ -1,28 +1,38 @@
 const botaoTema = document.querySelector("#botao-tema");
 
 botaoTema.addEventListener("click", function () {
+
     document.body.classList.toggle("tema-escuro");
 
     if (document.body.classList.contains("tema-escuro")) {
+
         botaoTema.textContent = "☀️ Modo claro";
+
     } else {
+
         botaoTema.textContent = "🌙 Modo escuro";
+
     }
+
 });
 
 
 const botoes = document.querySelectorAll(".botao-reacao");
 
+
 botoes.forEach(function (botao) {
 
     let curtiu = false;
 
+
     botao.addEventListener("click", function () {
 
-        const numeroSpan = botao.querySelector("span");
+        const numeroSpan =
+            botao.querySelector("span");
 
         const quantidadeAtual =
             Number(numeroSpan.textContent);
+
 
         if (curtiu === false) {
 
@@ -49,6 +59,9 @@ botoes.forEach(function (botao) {
 
             botao.style.color =
                 "var(--cor-rosa)";
+
         }
+
     });
+
 });

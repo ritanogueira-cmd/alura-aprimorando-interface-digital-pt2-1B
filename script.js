@@ -1,20 +1,54 @@
-const links = document.querySelectorAll('.menu a');
+const botaoTema = document.querySelector("#botao-tema");
 
-links.forEach((link) => {
-    link.addEventListener('click', () => {
-        links.forEach((item) => {
-            item.classList.remove('ativo');
-        });
+botaoTema.addEventListener("click", function () {
+    document.body.classList.toggle("tema-escuro");
 
-        link.classList.add('ativo');
-    });
+    if (document.body.classList.contains("tema-escuro")) {
+        botaoTema.textContent = "☀️ Modo claro";
+    } else {
+        botaoTema.textContent = "🌙 Modo escuro";
+    }
 });
 
 
-const posts = document.querySelectorAll('.post');
+const botoes = document.querySelectorAll(".botao-reacao");
 
-posts.forEach((post) => {
-    post.addEventListener('mouseenter', () => {
-        post.style.cursor = 'pointer';
+botoes.forEach(function (botao) {
+
+    let curtiu = false;
+
+    botao.addEventListener("click", function () {
+
+        const numeroSpan = botao.querySelector("span");
+
+        const quantidadeAtual =
+            Number(numeroSpan.textContent);
+
+        if (curtiu === false) {
+
+            numeroSpan.textContent =
+                quantidadeAtual + 1;
+
+            curtiu = true;
+
+            botao.style.backgroundColor =
+                "var(--cor-rosa)";
+
+            botao.style.color =
+                "white";
+
+        } else {
+
+            numeroSpan.textContent =
+                quantidadeAtual - 1;
+
+            curtiu = false;
+
+            botao.style.backgroundColor =
+                "var(--cor-botao)";
+
+            botao.style.color =
+                "var(--cor-rosa)";
+        }
     });
 });
